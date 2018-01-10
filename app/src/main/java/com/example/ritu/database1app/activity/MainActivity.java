@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            UIUtil.startProgressDialog(MainActivity.this, "Downloading data....");
         }
 
         @Override
@@ -154,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             adapter.notifyDataSetChanged();
+            UIUtil.stopProgressDialog(MainActivity.this);
         }
     }
 
